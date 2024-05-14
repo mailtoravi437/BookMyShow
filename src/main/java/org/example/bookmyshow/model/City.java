@@ -11,6 +11,7 @@ public class City {
     private final String name;
     private final List<Theatre> theatres;
 
+
     public City(@NonNull final String id, @NonNull final String name) {
         this.id = id;
         this.name = name;
