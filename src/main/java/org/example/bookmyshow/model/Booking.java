@@ -17,7 +17,7 @@ public class Booking {
     private BookingStatus bookingStatus;
     Map<String,Booking>  showBookings;
 
-    public Booking(@NonNull final String id, @NonNull final Show show, @NonNull final List<Seat> seats, @NonNull final String userId) {
+    public Booking(@NonNull final String id, final Show show, @NonNull final List<Seat> seats, @NonNull final String userId) {
         this.id = id;
         this.show = show;
         this.seats = seats;
@@ -26,7 +26,7 @@ public class Booking {
         showBookings = new HashMap<>();
     }
 
-    public  boolean isConfirmed() {
+    public boolean isConfirmed() {
         return this.bookingStatus == BookingStatus.Confirmed;
     }
 
@@ -45,4 +45,11 @@ public class Booking {
     }
 
 
+    public  boolean isConfirmed(Seat seat) {
+        return this.bookingStatus == BookingStatus.Confirmed;
+    }
+
+    public boolean isSeatBooked(Seat seat) {
+        return this.seats.contains(seat);
+    }
 }
